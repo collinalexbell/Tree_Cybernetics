@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
 struct Target_Revenue {
@@ -33,9 +34,24 @@ class Product {
   }
 };
 
+struct Goal {
+  int wavelength;
+  string name;
+  string description;
+  void show() {
+    cout << "{" << endl;
+    cout << "  name: " << name << endl;
+    cout << "  description: " << description << endl;
+    cout << "  wavelength: " << wavelength << endl;
+    cout << "}" << endl;
+  }
+
+};
+
 class Tree_Cybernetics {
   Target_Revenue *init_capital = NULL;
   Product *init_product = NULL;
+  vector<Goal> goals;
   public: 
   Tree_Cybernetics() {
     cout << "Booting Tree_Cybernetics" << endl;
@@ -59,11 +75,31 @@ class Tree_Cybernetics {
   void where_are_we_going() {
     cout << init_capital->dollars << "$ by " << init_capital->earn_by << endl;
   }
+
+  void add_goal() {
+    Goal goal;
+    cout << "----------------------------------------" << endl;
+    cout << " Add a goal " << endl;
+    cout << "----------------------------------------" << endl;
+    cout << "  name: ";
+    cin >> goal.name;
+    cout << "----------------------------------------" << endl;
+    cout << "  description: ";
+    cin >> goal.description;
+    cout << "----------------------------------------" << endl;
+    cout << "  wavelength (in seconds): ";
+    cin >> goal.wavelength;
+    cout << "----------------------------------------" << endl;
+    goals.push_back(goal);
+    goal.show();
+  }
+
   void run_menu() {
     string choice;
     cout << "1) Where are we going?" << endl;
     cout << "2) Sales to target?" << endl;
     cout << "3) Describe the product" << endl;
+    cout << "4) Add Goal" << endl;
     cin >> choice;
     if(choice == "1"){
       where_are_we_going();
@@ -73,6 +109,9 @@ class Tree_Cybernetics {
     }
     if(choice == "3"){
       init_product->describe();
+    }
+    if(choice == "4"){
+      add_goal();
     }
   }
 };
