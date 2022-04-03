@@ -13,3 +13,11 @@ spend amount of time meditating
 #### for 10 minutes
 `meditate`
 
+## Treelon
+
+init the sim world
+
+### Usage
+#### usage
+only a single command
+`Treelon`
