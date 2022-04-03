@@ -1,0 +1,5 @@
+if(EXISTS "/home/kuberlog/Tree_Cybernetics/opengl/test_space_clean[1]_tests.cmake")
+  include("/home/kuberlog/Tree_Cybernetics/opengl/test_space_clean[1]_tests.cmake")
+else()
+  add_test(test_space_clean_NOT_BUILT test_space_clean_NOT_BUILT)
+endif()
