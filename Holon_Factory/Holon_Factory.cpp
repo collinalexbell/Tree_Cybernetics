@@ -1,3 +1,6 @@
 
-class Holon_Factory() {
+class Holon_Factory {
+};
+
+int main() {
 }
