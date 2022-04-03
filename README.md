@@ -18,6 +18,13 @@ spend amount of time meditating
 init the sim world
 
 ### Usage
-#### usage
 only a single command
 `Treelon`
+
+## Cyborg
+
+a daemon of the virtual world
+
+### Usage
+only a single command
+`Cyborg`
