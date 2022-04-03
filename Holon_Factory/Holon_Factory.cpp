@@ -1,0 +1,3 @@
+
+class Holon_Factory() {
+}
