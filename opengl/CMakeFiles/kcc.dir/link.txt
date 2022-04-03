@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/kcc.dir/kcc.cpp.o -o kcc 

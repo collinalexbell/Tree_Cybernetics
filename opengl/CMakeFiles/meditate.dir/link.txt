@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/meditate.dir/meditate.cpp.o -o meditate 

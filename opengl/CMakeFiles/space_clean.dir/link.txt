@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/space_clean.dir/space_clean.cpp.o -o space_clean 
