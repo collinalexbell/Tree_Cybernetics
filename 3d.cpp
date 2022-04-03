@@ -40,7 +40,7 @@ void init_and_configure_glfw() {
 #endif
 }
 
-GLFWwindow* create_window() {
+GLFWwindow* create_glfw_window() {
   // glfw window creation
   // --------------------
   GLFWwindow *window =
@@ -129,7 +129,7 @@ std::vector<float> triangle_vertices() {
 
 void init_3d() {
   init_and_configure_glfw();
-  GLFWwindow* window = create_window();
+  GLFWwindow* window = create_glfw_window();
   init_gl_fn_pointers();
   unsigned int vertexShader = build_and_compile_vertex_shader();
   unsigned int fragmentShader = build_and_compile_fragment_shader();
