@@ -26,6 +26,14 @@ class Tree_Cybernetics {
   void where_are_we_going() {
     cout << init_capital->dollars << "$ by " << init_capital->earn_by << endl;
   }
+  void run_menu() {
+    string choice;
+    cout << "1) Where are we going?" << endl;
+    cin >> choice;
+    if(choice == "1"){
+      where_are_we_going();
+    }
+  }
 };
 
 
@@ -38,5 +46,5 @@ int main() {
       120000,"2022-04-30"
       );
 
-  kuberlogs_company.where_are_we_going();
+  kuberlogs_company.run_menu();
 }
