@@ -3,3 +3,4 @@ CMakeFiles/
 _deps/
 lib/
 cmake_install.cmake
+Makefile
