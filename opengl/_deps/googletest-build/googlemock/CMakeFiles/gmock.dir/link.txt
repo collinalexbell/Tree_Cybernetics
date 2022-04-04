@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g -shared -Wl,-soname,libgmockd.so.1.10.0 -o ../../../lib/libgmockd.so.1.10.0 CMakeFiles/gmock.dir/src/gmock-all.cc.o  -Wl,-rpath,/home/kuberlog/Tree_Cybernetics/opengl/lib: ../../../lib/libgtestd.so.1.10.0 -lpthread 

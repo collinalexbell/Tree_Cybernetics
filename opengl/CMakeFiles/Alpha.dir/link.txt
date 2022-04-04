@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/Alpha.dir/Alpha.cpp.o -o Alpha 

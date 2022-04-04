@@ -1,7 +1,0 @@
-add_test( SpaceCleaner.sweep /home/kuberlog/Tree_Cybernetics/opengl/test_space_clean [==[--gtest_filter=SpaceCleaner.sweep]==] --gtest_also_run_disabled_tests)
-set_tests_properties( SpaceCleaner.sweep PROPERTIES WORKING_DIRECTORY /home/kuberlog/Tree_Cybernetics/opengl SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test( SpaceCleaner.dishes /home/kuberlog/Tree_Cybernetics/opengl/test_space_clean [==[--gtest_filter=SpaceCleaner.dishes]==] --gtest_also_run_disabled_tests)
-set_tests_properties( SpaceCleaner.dishes PROPERTIES WORKING_DIRECTORY /home/kuberlog/Tree_Cybernetics/opengl SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-add_test( SpaceCleaner.run /home/kuberlog/Tree_Cybernetics/opengl/test_space_clean [==[--gtest_filter=SpaceCleaner.run]==] --gtest_also_run_disabled_tests)
-set_tests_properties( SpaceCleaner.run PROPERTIES WORKING_DIRECTORY /home/kuberlog/Tree_Cybernetics/opengl SKIP_REGULAR_EXPRESSION [==[\[  SKIPPED \]]==])
-set( test_space_clean_TESTS SpaceCleaner.sweep SpaceCleaner.dishes SpaceCleaner.run)

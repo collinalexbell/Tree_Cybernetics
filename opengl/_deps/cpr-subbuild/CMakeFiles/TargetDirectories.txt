@@ -1,3 +1,0 @@
-/home/kuberlog/Tree_Cybernetics/opengl/_deps/cpr-subbuild/CMakeFiles/rebuild_cache.dir
-/home/kuberlog/Tree_Cybernetics/opengl/_deps/cpr-subbuild/CMakeFiles/edit_cache.dir
-/home/kuberlog/Tree_Cybernetics/opengl/_deps/cpr-subbuild/CMakeFiles/cpr-populate.dir

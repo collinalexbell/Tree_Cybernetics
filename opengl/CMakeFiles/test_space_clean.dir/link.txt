@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/test_space_clean.dir/test_space_clean.cpp.o -o test_space_clean  -Wl,-rpath,/home/kuberlog/Tree_Cybernetics/opengl/lib lib/libgtest_maind.so.1.10.0 lib/libgtestd.so.1.10.0 -lpthread 

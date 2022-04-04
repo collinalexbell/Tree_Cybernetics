@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/Treelon.dir/Treelon.cpp.o CMakeFiles/Treelon.dir/3d.cpp.o CMakeFiles/Treelon.dir/glad/glad.c.o -o Treelon  -lGL /usr/lib64/libglfw.so.3.3 -lX11 -lXrandr -lXi -ldl 

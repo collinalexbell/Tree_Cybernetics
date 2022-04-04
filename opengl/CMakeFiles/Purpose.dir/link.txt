@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/Purpose.dir/Purpose.cpp.o -o Purpose 
