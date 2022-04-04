@@ -28,3 +28,7 @@ a daemon of the virtual world
 ### Usage
 only a single command
 `Cyborg`
+
+## Purpose
+
+a small program that reads the company purpose from a file, then makes the user think about ways to improve progress towards the purpose
