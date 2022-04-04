@@ -32,3 +32,6 @@ only a single command
 ## Purpose
 
 a small program that reads the company purpose from a file, then makes the user think about ways to improve progress towards the purpose
+
+### Usage
+only a single command `Purpose`. It requires definite_purpose file to exist.
