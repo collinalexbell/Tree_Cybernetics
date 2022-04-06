@@ -123,7 +123,7 @@ int main() {
   std::cout << "Tree_Cybernetics" << std::endl;
   Tree_Cybernetics kuberlogs_company;
   kuberlogs_company.set_init_capital(
-      120000,"2022-04-30"
+      120000,"2022-09-01"
       );
 
   kuberlogs_company.set_init_product(
