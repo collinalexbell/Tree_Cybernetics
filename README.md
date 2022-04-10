@@ -17,6 +17,13 @@ The mono-repo for Tree Cybernetics Incorporated
 
 The first allows one to buy the product, the other allows you to by the means of production of said product.
 
+# Cybernetics
+- Leash: RPi, Gyro, High Velocity Generator, Utility Leash from a pet store
+
+- 
+
+# 
+
 # Programs
 
 ## meditate
