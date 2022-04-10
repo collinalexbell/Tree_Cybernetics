@@ -18,9 +18,17 @@ The mono-repo for Tree Cybernetics Incorporated
 The first allows one to buy the product, the other allows you to by the means of production of said product.
 
 # Cybernetics
-- Leash: RPi, Gyro, High Velocity Generator, Utility Leash from a pet store
+- Leash: 
+         - 25$ RPi, 
+         - 40$ Gyro,
+         - 25$ High Velocity Generator,
+         - 30$ Utility Leash from a pet store
+         = <price>
 
-- 
+         Variants: 
+            - Long & Thin: <price> for full room coverage
+            - Strong & Thick: <price> for City Coverage
+            - Ultimate: 50$ + Long&Thin and Strong&Thick 
 
 # 
 
