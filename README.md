@@ -1,5 +1,13 @@
 # Tree_Cybernetics
 
+## Founders
+```json
+[
+ Collin_Bell,
+ Zeus
+]
+```
+
 The mono-repo for Tree Cybernetics Incorporated
 
 # Programs
