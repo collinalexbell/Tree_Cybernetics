@@ -4,7 +4,7 @@
 ```json
 [
  Collin_Bell,
- Zeus
+ ZeusInc
 ]
 ```
 
