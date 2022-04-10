@@ -1,0 +1,2 @@
+#!/bin/bash
+feh --bg-scale ~/Tree_Cybernetics/Treelon_Game/zeus.png &
