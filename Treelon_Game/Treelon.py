@@ -1,6 +1,9 @@
-#!/bin/python
+#!usr/bin/python
 
 # Treelon.py
+
+import pygame
+import pygame.image
 
 class Treelon:
     #         is an adventure game about becoming a world famous billionaire cyberneticist
@@ -10,8 +13,12 @@ class Treelon:
         # What is the purpose of your character
         self.name = name
         self.primary_aim = primary_aim
+        pygame.init()
+        pygame.get_sdl_version
 
     def report(self):
+        print("sdl version:")
+        print(pygame.version.SDL)
         print(self.name + "'s primary aim is " + self.primary_aim)
 
 def kuberlog():
