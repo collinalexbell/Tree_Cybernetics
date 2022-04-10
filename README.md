@@ -40,6 +40,9 @@ None launched Yet
         - pocket tablet the size of an Samsung Galexy S10+
         - runs TreeOS
 
+- Tree Security:
+    - - Mobile&deployable security systems for a highly mobile lifestyle.
+
 # Systems
 - TreeOS: The Tree Operating System for Tree Cybernetics (will run on all cybernetic products including the Tree Square
 
