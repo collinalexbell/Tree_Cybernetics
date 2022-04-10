@@ -14,7 +14,7 @@ class Treelon:
         self.name = name
         self.primary_aim = primary_aim
         pygame.init()
-        pygame.get_sdl_version
+        pygame.display.set_mode([320, 240])
 
     def report(self):
         print("sdl version:")
@@ -22,6 +22,9 @@ class Treelon:
         print(self.name + "'s primary aim is " + self.primary_aim)
 
 def kuberlog():
+    treelon =  Treelon("\n\nkuberlog", "to become the best software engineer in the world and earn 10e9$ profit by building ethical, benificial, and purposeful cybernetics")
+
+
     print("""
                        __
               \ ______/ V`-,
@@ -42,8 +45,7 @@ def kuberlog():
         import os
         os.system('./wallpaper')
 
+    return treelon
             
-    return Treelon("\n\nkuberlog", "to become the best software engineer in the world and earn 10e9$ profit by building ethical, benificial, and purposeful cybernetics")
-
-
+    
 kuberlog().report()
