@@ -4,6 +4,7 @@
 
 import pygame
 import pygame.image
+import pygame.display
 
 class Treelon:
     #         is an adventure game about becoming a world famous billionaire cyberneticist
@@ -14,7 +15,14 @@ class Treelon:
         self.name = name
         self.primary_aim = primary_aim
         pygame.init()
-        pygame.display.set_mode([320, 240])
+        self.screen = pygame.display.set_mode([320, 240])
+        self.screen.fill((0,0,0))
+        self.display_zeus()
+        pygame.display.flip()
+
+    def display_zeus(self):
+        Zeus = pygame.image.load("Zeus.png")
+        self.screen.blit(Zeus, Zeus.get_rect())
 
     def report(self):
         print("sdl version:")
