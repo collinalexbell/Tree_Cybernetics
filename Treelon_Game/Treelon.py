@@ -22,7 +22,11 @@ class Treelon:
 
     def display_zeus(self):
         Zeus = pygame.image.load("Zeus.png")
+        Collin = pygame.image.load("collin.png")
+        collin_position = Collin.get_rect()
+        moved_position = collin_position.move(150,50)
         self.screen.blit(Zeus, Zeus.get_rect())
+        self.screen.blit(Collin, moved_position)
 
     def report(self):
         print("sdl version:")
