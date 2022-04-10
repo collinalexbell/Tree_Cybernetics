@@ -17,7 +17,13 @@ The mono-repo for Tree Cybernetics Incorporated
 
 The first allows one to buy the product, the other allows you to by the means of production of said product.
 
-# Cybernetics
+# Cybernetic Products
+
+## Launched:
+
+None launched Yet
+
+## To Be Launched:
 - Leash: 
          - 25$ RPi, 
          - 40$ Gyro,
@@ -30,7 +36,12 @@ The first allows one to buy the product, the other allows you to by the means of
             - Strong & Thick: <price> for City Coverage
             - Ultimate: 50$ + Long&Thin and Strong&Thick 
 
-# 
+- Tree Square: 
+        - pocket tablet the size of an Samsung Galexy S10+
+        - runs TreeOS
+
+# Systems
+- TreeOS: The Tree Operating System for Tree Cybernetics (will run on all cybernetic products including the Tree Square
 
 # Programs
 
