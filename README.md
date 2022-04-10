@@ -10,6 +10,13 @@
 
 The mono-repo for Tree Cybernetics Incorporated
 
+# Merchandise
+
+- Physical cybernetics manufactured from designs made in the game
+- Cardboard Box sized factories that can produce the physical cybernetics from designs made in the game.
+
+The first allows one to buy the product, the other allows you to by the means of production of said product.
+
 # Programs
 
 ## meditate
