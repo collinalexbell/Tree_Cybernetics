@@ -7,6 +7,9 @@ import pygame.image
 import pygame.display
 import time
 
+GAME_HEIGHT = 480
+GAME_WIDTH = 640
+
 class Character:
     def __init__(self, sprite_file_name, starting_pos = (20,20)):
         self.sprite = pygame.image.load(sprite_file_name)
@@ -31,7 +34,7 @@ class Treelon:
         self.name = name
         self.primary_aim = primary_aim
         pygame.init()
-        self.screen = pygame.display.set_mode([320, 240])
+        self.screen = pygame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
         self.screen.fill((254,254,254))
         self.Collin = Character("collin.png", (150, 50))
         self.Zeus = Character("Zeus.png")
