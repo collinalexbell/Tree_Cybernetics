@@ -7,10 +7,10 @@ import pygame.image
 import pygame.display
 import time
 
-class Zeus:
-    def __init__(self):
-        self.sprite = pygame.image.load("Zeus.png")
-        self.pos = (20,20)
+class Character:
+    def __init__(self, sprite_file_name, starting_pos = (20,20)):
+        self.sprite = pygame.image.load(sprite_file_name)
+        self.pos = starting_pos
 
     def tick(self):
         if(self.pos[0] < 100):
@@ -33,18 +33,16 @@ class Treelon:
         pygame.init()
         self.screen = pygame.display.set_mode([320, 240])
         self.screen.fill((254,254,254))
-        self.Collin = pygame.image.load("collin.png")
-        self.Zeus = Zeus()
-        self.display_zeus()
+        self.Collin = Character("collin.png", (150, 50))
+        self.Zeus = Character("Zeus.png")
+        self.tick()
 
-    def display_zeus(self):
+    def tick(self):
         self.Zeus.tick()
         self.screen.fill((254,254,254))
-        collin_position = self.Collin.get_rect()
-        moved_position = self.Collin.get_rect().move(150,50)
-        print(self.Zeus.get_pos())
-        self.screen.blit(self.Collin, moved_position)
+        self.screen.blit(self.Collin.sprite, self.Collin.get_pos())
         self.screen.blit(self.Zeus.sprite, self.Zeus.get_pos())
+
         pygame.display.flip()
 
     def report(self):
@@ -56,7 +54,7 @@ def kuberlog():
     treelon =  Treelon("\n\nkuberlog", "to become the best software engineer in the world and earn 10e9$ profit by building ethical, benificial, and purposeful cybernetics")
 
     while(True):
-        treelon.display_zeus()
+        treelon.tick()
 
     print("""
                        __
