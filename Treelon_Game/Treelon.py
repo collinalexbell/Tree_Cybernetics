@@ -12,7 +12,9 @@ GAME_WIDTH = 640
 
 class Character:
     def __init__(self, sprite_file_name, starting_pos = (20,20)):
-        self.sprite = pygame.image.load(sprite_file_name)
+        oversized_image = pygame.image.load(sprite_file_name)
+        self.sprite = picture = pygame.transform.scale(oversized_image, (70,52 ))
+
         self.pos = starting_pos
 
     def tick(self):
