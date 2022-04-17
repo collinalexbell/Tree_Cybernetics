@@ -5,6 +5,7 @@
 import pygame
 import pygame.image
 import pygame.display
+from debug import debug
 import time
 
 GAME_HEIGHT = 480
@@ -14,6 +15,7 @@ class Character:
     def __init__(self, sprite_file_name, starting_pos = (20,20)):
         self.sprite = pygame.image.load(sprite_file_name)
         self.pos = starting_pos
+        self.font = pygame.font.Font(None,30)
 
     def tick(self):
         if(self.pos[0] < 100):
@@ -22,7 +24,6 @@ class Character:
 
     def get_pos(self):
         return self.pos
-
 
 
 class Treelon:
@@ -45,6 +46,7 @@ class Treelon:
         self.screen.fill((254,254,254))
         self.screen.blit(self.Collin.sprite, self.Collin.get_pos())
         self.screen.blit(self.Zeus.sprite, self.Zeus.get_pos())
+        debug("Treelong Game v0.0")
 
         pygame.display.flip()
 
