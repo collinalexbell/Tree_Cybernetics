@@ -8,7 +8,8 @@ A simulation adventure game. Become a cyberneticist! The dream of being a genius
 - His Dark Materials (Golden Compass)
 
 ## Starting Worlds (multiple choices)
+- Waypoint Cafe
+- NYC studio kuberlog's starting
 - Washington DC (politics profession)
 - Yacht
 - EarthShip (rockies)
-- NYC studio kuberlog's starting
