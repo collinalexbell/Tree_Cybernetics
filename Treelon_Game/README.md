@@ -13,3 +13,6 @@ A simulation adventure game. Become a cyberneticist! The dream of being a genius
 - Washington DC (politics profession)
 - Yacht
 - EarthShip (rockies)
+
+## World Generation
+- Use satalite images to genearte worlds
