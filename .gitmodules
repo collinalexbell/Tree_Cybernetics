@@ -1,0 +1,3 @@
+[submodule "Treelon_Game/pixelate"]
+	path = Treelon_Game/pixelate
+	url = https://github.com/ferretj/pixelate.git
