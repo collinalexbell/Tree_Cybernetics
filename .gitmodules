@@ -1,3 +1,6 @@
 [submodule "Treelon_Game/pixelate"]
 	path = Treelon_Game/pixelate
 	url = https://github.com/ferretj/pixelate.git
+[submodule "Treelon_Game/ZeldaTutorialRipOffNotMine"]
+	path = Treelon_Game/ZeldaTutorialRipOffNotMine
+	url = https://github.com/kuberlog/ZeldaTutorialRipOffNotMine
