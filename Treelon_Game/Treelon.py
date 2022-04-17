@@ -20,7 +20,6 @@ class Character:
     def tick(self):
         if(self.pos[0] < 100):
             self.pos = tuple(map(sum, zip(self.pos, (1,1))))
-            time.sleep(0.04)
 
     def get_pos(self):
         return self.pos
@@ -37,6 +36,8 @@ class Treelon:
     def __init__(self, name, primary_aim):
         # What is the purpose of your character
         self.name = name
+        self.party_move_x = 0
+        self.party_move_y = 0
         self.primary_aim = primary_aim
         pygame.init()
         self.screen = pygame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
@@ -49,9 +50,26 @@ class Treelon:
         self.tick()
 
     def tick(self):
+        events = pygame.event.get()
+        for event in events:
+          if event.type == pygame.KEYUP:
+            self.party_move_x=0
+            self.party_move_y=0
+          if event.type == pygame.KEYDOWN:
+            print("keydown")
+            print(event.key)
+            d_move=5
+            if event.key == pygame.K_d:
+              self.party_move_x=d_move
+            if event.key == pygame.K_a:
+              self.party_move_x=-d_move
+            if event.key == pygame.K_w:
+              self.party_move_y=-d_move
+            if event.key == pygame.K_s:
+              self.party_move_y=d_move
+        self.Zeus.move(self.party_move_x, self.party_move_y)
+        self.Collin.move(self.party_move_x, self.party_move_y)
         self.Zeus.tick()
-        self.Zeus.move(1, 0)
-        self.Collin.move(1, 0)
         self.screen.fill((254,254,254))
         self.screen.blit(self.Waypoint_Cafe, (0,-150))
         self.screen.blit(self.Collin.sprite, self.Collin.get_pos())
