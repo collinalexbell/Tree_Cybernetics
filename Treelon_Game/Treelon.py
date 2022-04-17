@@ -41,6 +41,7 @@ class Treelon:
         self.party_move_y = 0
         self.primary_aim = primary_aim
         pygame.init()
+        pygame.display.set_caption("Treelon")
         self.screen = pygame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
         self.screen.fill((254,254,254))
         self.Collin = Character("collin.png", (250, 200), 0.05)
