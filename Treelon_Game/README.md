@@ -6,3 +6,13 @@ A simulation adventure game. Become a cyberneticist! The dream of being a genius
 - Minecraft
 - Pokemon
 - His Dark Materials (Golden Compass)
+
+## Starting Worlds (multiple choices)
+- Waypoint Cafe
+- NYC studio kuberlog's starting
+- Washington DC (politics profession)
+- Yacht
+- EarthShip (rockies)
+
+## World Generation
+- Use satalite images to genearte worlds

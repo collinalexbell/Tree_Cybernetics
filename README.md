@@ -1,5 +1,7 @@
 # Tree_Cybernetics
 
+This is an RPG and adventure game modeled after current_year() NYC. 
+
 ## Founders
 ```json
 [
