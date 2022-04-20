@@ -2,6 +2,13 @@
 
 This is an RPG and adventure game modeled after current_year() NYC. 
 
+## Challenges
+
+- The 120k$ challenge: Ended Apr 17th 11:59PM EST
+  * [Viewable on YouTube](https://www.youtube.com/watch?v=UQtUd76Dc_g)
+  * Outcome: Failure
+  * * Reasons: Didn't make any $$
+
 ## Founders
 ```json
 [
@@ -83,3 +90,5 @@ a small program that reads the company purpose from a file, then makes the user 
 
 #### Usage
 only a single command `Purpose`. It requires definite_purpose file to exist.
+
+
