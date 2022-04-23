@@ -28,6 +28,24 @@ class Character:
     def move(self, x, y):
       self.pos = (self.pos[0]+x, self.pos[1]+y)
 
+class Pos:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+class Party: 
+    def __init__(self, x, y):
+        self.setPosition(x, y)
+    def setX(self, x):
+        self.x = x
+    def setY(self, y):
+        self.y = y
+    def setPosition(self, x, y):
+        self.x = x
+        self.y = y
+    def getPos(self):
+        return Pos(self.x,self.y)
+
 
 class Treelon:
     #         is an adventure game about becoming a world famous billionaire cyberneticist
@@ -37,8 +55,7 @@ class Treelon:
         # What is the purpose of your character
         self.name = name
         self.reblit_background = True
-        self.party_move_x = 0
-        self.party_move_y = 0
+        self.party = Party(0,0)
         self.primary_aim = primary_aim
         pygame.init()
         pygame.display.set_caption("Treelon")
@@ -57,22 +74,22 @@ class Treelon:
         events = pygame.event.get()
         for event in events:
           if event.type == pygame.KEYUP:
-            self.party_move_x=0
-            self.party_move_y=0
+            self.party.setPosition(0,0)
           if event.type == pygame.KEYDOWN:
             print("keydown")
             print(event.key)
-            d_move=5
+            d_move=1
             if event.key == pygame.K_d:
-              self.party_move_x=d_move
+              self.party.setX(d_move)
             if event.key == pygame.K_a:
-              self.party_move_x=-d_move
+              self.party.setX(-d_move)
             if event.key == pygame.K_w:
-              self.party_move_y=-d_move
+              self.party.setY(-d_move)
             if event.key == pygame.K_s:
-              self.party_move_y=d_move
-        self.Zeus.move(self.party_move_x, self.party_move_y)
-        self.Collin.move(self.party_move_x, self.party_move_y)
+              self.party.setY(d_move)
+        pos = self.party.getPos()
+        self.Zeus.move(pos.x, pos.y)
+        self.Collin.move(pos.x, pos.y)
         if(self.Collin.get_pos()[0] > GAME_WIDTH):
           self.Collin.move(-GAME_WIDTH, 0)
           self.Zeus.move(-GAME_WIDTH, 0)
@@ -91,7 +108,6 @@ class Treelon:
         self.screen.blit(self.Collin.sprite, self.Collin.get_pos())
         self.screen.blit(self.Zeus.sprite, self.Zeus.get_pos())
 
-        debug(f"{self.party_move_x} {self.party_move_y}")
         pygame.display.flip()
 
     def report(self):
