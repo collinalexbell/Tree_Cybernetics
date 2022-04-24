@@ -4,6 +4,7 @@
 
 import pygame
 import pygame.image
+import pygame.font
 import pygame.display
 import Mechanics
 import time
@@ -54,7 +55,6 @@ class Treelon:
 
     def __init__(self, name, primary_aim):
         # What is the purpose of your character
-        self.mechanics = Mechanics.allMechanics()
         self.name = name
         self.reblit_background = True
         self.party = Party(0,0)
@@ -63,6 +63,7 @@ class Treelon:
         pygame.display.set_caption("Treelon")
         self.screen = pygame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
         self.screen.fill((254,254,254))
+        self.mechanics = Mechanics.allMechanics(self.screen)
         self.Collin = Character("collin.png", (250, 200), 0.05)
         self.Zeus = Character("Zeus.png", (240, 220), 0.3)
         waypoint_img = pygame.image.load("waypoint_cafe.png")
@@ -109,6 +110,8 @@ class Treelon:
           self.screen.blit(self.Waypoint_Cafe, (-1*self.screen_x, -1*self.screen_y))
         self.screen.blit(self.Collin.sprite, self.Collin.get_pos())
         self.screen.blit(self.Zeus.sprite, self.Zeus.get_pos())
+        for mechanic in self.mechanics:
+            mechanic.draw()
 
         pygame.display.flip()
 
