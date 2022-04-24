@@ -5,6 +5,7 @@
 import pygame
 import pygame.image
 import pygame.display
+import Mechanics
 import time
 from debug import debug
 
@@ -53,6 +54,7 @@ class Treelon:
 
     def __init__(self, name, primary_aim):
         # What is the purpose of your character
+        self.mechanics = Mechanics.allMechanics()
         self.name = name
         self.reblit_background = True
         self.party = Party(0,0)
