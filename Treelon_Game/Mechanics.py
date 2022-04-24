@@ -7,6 +7,20 @@ class Mechanic():
         pass
 
 class StatisticsMechanic(Mechanic):
+    class Statistic():
+        def __init__(self, name, value):
+            self.name = name
+            self.value = value
+    class StaticisticSet():
+        def __init__(self):
+            self.statistics = [
+                    Statistic("speed", 20),
+                    Statistic("endurance", 20),
+                    Statistic("physical attractiveness", 20),
+                    Statistic("physical fitness", 20),
+                    Statistic("software engineering skill", 40 )
+                    ]
+
     def __init__(self):
         pass
 
@@ -30,9 +44,22 @@ class InventoryMechanic(Mechanic):
 
 
 class AttractionMechanic(Mechanic):
-    def __init__(self):
-        pass
+    # Use self.attraction as a coefficient in a wave function that deterimines where one holon is relative to the other.
+    def __init__(self, holons):
+        self.holons = holons
+        self.attraction = 0.5
+    def increaseAttraction(x):
+        self.attraction += x
+    def decreaseAttraction(x):
+        self.attraction -= x
 
-def allMechanics(screen):
-    return [StatisticsMechanic(), InventoryMechanic(screen), AttractionMechanic()]
+    def solid(self):
+        self.attraction = 0.8
+    def liquid(self):
+        self.attraction = 0.4
+    def gas(self):
+        self.attraction = 0.1
+
+def allMechanics(screen, characters):
+    return [StatisticsMechanic(), InventoryMechanic(screen), AttractionMechanic(characters)]
 

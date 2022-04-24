@@ -63,9 +63,10 @@ class Treelon:
         pygame.display.set_caption("Treelon")
         self.screen = pygame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
         self.screen.fill((254,254,254))
-        self.mechanics = Mechanics.allMechanics(self.screen)
         self.Collin = Character("collin.png", (250, 200), 0.05)
         self.Zeus = Character("Zeus.png", (240, 220), 0.3)
+        characters = [self.Collin, self.Zeus]
+        self.mechanics = Mechanics.allMechanics(self.screen, characters)
         waypoint_img = pygame.image.load("waypoint_cafe.png")
         self.Waypoint_Cafe = waypoint_img
         self.screen_x = 0
