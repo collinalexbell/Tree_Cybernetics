@@ -72,6 +72,9 @@ spend amount of time meditating
 
 init the sim world
 
+#### Libraries
+- rastervision
+
 #### Usage
 only a single command
 `Treelon`
