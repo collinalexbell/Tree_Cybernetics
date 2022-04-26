@@ -14,11 +14,11 @@ class StatisticsMechanic(Mechanic):
     class StaticisticSet():
         def __init__(self):
             self.statistics = [
-                    Statistic("speed", 20),
-                    Statistic("endurance", 20),
-                    Statistic("physical attractiveness", 20),
-                    Statistic("physical fitness", 20),
-                    Statistic("software engineering skill", 40 )
+                    StatisticsMechanic.Statistic("speed", 20),
+                    StatisticsMechanic.Statistic("endurance", 20),
+                    StatisticsMechanic.Statistic("physical attractiveness", 20),
+                    StatisticsMechanic.Statistic("physical fitness", 20),
+                    StatisticsMechanic.Statistic("software engineering skill", 40 )
                     ]
 
     def __init__(self):
