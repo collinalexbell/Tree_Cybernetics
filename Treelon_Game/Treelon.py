@@ -48,6 +48,26 @@ class Party:
     def getPos(self):
         return Pos(self.x,self.y)
 
+class World:
+    # A world is an environment to load into Treelon. 
+    # The class invariant is that the World is ready to plug into Treelon and render as soon as load() is called with success
+    # 
+    # The world dictates the rendering of itself. 
+    # It can render using any library it wants to by inheriting from World and overloading the render methods.
+    # Subclasses of world implement a generic render method that various world images can be loaded into.
+    
+    def __init__(self, name):
+        self.name = name
+        
+    def render(self):
+        # the method that renders this world in Treelon, using whatever library this function needs to use.
+        pass
+    
+    def load(self, world_image):
+        # loads a world image into the World object 
+        # return invariant: the World is ready to plug into Treelon and render at this point
+        pass
+    
 
 class Treelon:
     #         is an adventure game about becoming a world famous billionaire cyberneticist
@@ -123,7 +143,13 @@ class Treelon:
 
 def kuberlog():
     treelon =  Treelon("\n\nkuberlog", "to become the best software engineer in the world and earn 10e9$ profit by building ethical, benificial, and purposeful cybernetics")
-
+    worlds = [
+        World("Waypoint Cafe"),
+        World("NYC studio kuberlog's starting"),
+        World("Washington DC (politics profession)"),
+        World("Yacht"),
+        World("EarthShip (rockies)"),
+    ]
     while(True):
         treelon.tick()
 
