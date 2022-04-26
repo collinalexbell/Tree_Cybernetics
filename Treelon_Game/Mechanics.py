@@ -48,15 +48,19 @@ class AttractionMechanic(Mechanic):
     def __init__(self, holons):
         self.holons = holons
         self.attraction = 0.5
-    def increaseAttraction(x):
+        
+    def increaseAttraction(self, x):
         self.attraction += x
-    def decreaseAttraction(x):
+        
+    def decreaseAttraction(self, x):
         self.attraction -= x
 
     def solid(self):
         self.attraction = 0.8
+        
     def liquid(self):
         self.attraction = 0.4
+        
     def gas(self):
         self.attraction = 0.1
 
