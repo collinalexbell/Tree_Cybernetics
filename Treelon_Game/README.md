@@ -16,3 +16,6 @@ A simulation adventure / RPG game. Become a billionaire cyberneticist! The dream
 
 ## World Generation
 - Use satalite images to genearte worlds
+
+## Quests
+- "The Nug Quest": may become infamous. It will be an in game quest where the reward for completing it will be a nugget of legal NYC weed. Of course, the user must be in NYC to do the quest.
