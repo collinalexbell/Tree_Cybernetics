@@ -73,20 +73,22 @@ class World:
 class Treelon:
     #         is an adventure game about becoming a world famous billionaire cyberneticist
     #         the aim of Treelon is to augment reality and bring tech genius dreams to life 
-
-    def __init__(self, name, primary_aim):
-        # What is the purpose of your character
-        self.name = name
+    def init_graphics(self):
         self.reblit_background = True
-        self.party = Party(0,0)
-        self.primary_aim = primary_aim
         pygame.init()
         pygame.display.set_caption("Treelon")
         self.screen = pygame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
         self.screen.fill((254,254,254))
-        self.Collin = Character("collin.png", (250, 200), 0.05)
-        self.Zeus = Character("Zeus.png", (240, 220), 0.3)
-        characters = [self.Collin, self.Zeus]
+
+    def __init__(self, name, primary_aim):
+        # What is the purpose of your character
+        self.name = name
+        self.party = Party(0,0)
+        self.primary_aim = primary_aim
+
+        self.init_graphics()
+
+        characters = self.init_characters()
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
         waypoint_img = pygame.image.load("waypoint_cafe.png")
         self.Waypoint_Cafe = waypoint_img
@@ -94,6 +96,11 @@ class Treelon:
         self.screen_y = 110 
         #self.Waypoint_Cafe = pygame.transform.scale(waypoint_img, (640,420))
         self.tick()
+
+    def init_characters(self):
+        self.Collin = Character("collin.png", (250, 200), 0.05)
+        self.Zeus = Character("Zeus.png", (240, 220), 0.3)
+        return [self.Collin, self.Zeus]
 
     def tick(self):
         events = pygame.event.get()
