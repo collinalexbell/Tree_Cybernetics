@@ -4,3 +4,6 @@
 [submodule "Treelon_Game/ZeldaTutorialRipOffNotMine"]
 	path = Treelon_Game/ZeldaTutorialRipOffNotMine
 	url = https://github.com/kuberlog/ZeldaTutorialRipOffNotMine
+[submodule "Treelon_Game/onix_bot"]
+	path = Treelon_Game/onix_bot
+	url = git@github.com:kuberlog/ya_boi_bot.git

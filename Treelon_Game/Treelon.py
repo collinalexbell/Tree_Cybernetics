@@ -7,6 +7,7 @@ import pygame.image
 import pygame.font
 import pygame.display
 import Mechanics
+import BuilderMode
 import time
 from debug import debug
 
@@ -122,6 +123,7 @@ class Treelon:
         print(self.name + "'s primary aim is " + self.primary_aim)
 
 def kuberlog():
+    print(BuilderMode.init_builder_mode())
     treelon =  Treelon("\n\nkuberlog", "to become the best software engineer in the world and earn 10e9$ profit by building ethical, benificial, and purposeful cybernetics")
 
     while(True):
