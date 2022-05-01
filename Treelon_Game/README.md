@@ -1,6 +1,6 @@
-# Treelon_Game
+# Tree of Life
 
-A simulation adventure game. Become a cyberneticist! The dream of being a genius billionaire is achievable when simulation software is used to become a cyberneticist and profit off of cybernetics products sold through your actual corporation. This is an Augmentend Reality Simulation that dents reality.
+ simulation adventure / RPG game. Become a billionaire cyberneticist! The dream of being a genius billionaire is achievable when simulation software is used! Profit off of cybernetics products sold through your actual corporation. This is an Augmentend Reality Simulation that dents reality.
 
 ## Inspirations
 - Minecraft
@@ -16,3 +16,6 @@ A simulation adventure game. Become a cyberneticist! The dream of being a genius
 
 ## World Generation
 - Use satalite images to genearte worlds
+
+## Quests
+- "The Nug Quest": may become infamous. It will be an in game quest where the reward for completing it will be a nugget of legal NYC weed. Of course, the user must be in NYC to do the quest.

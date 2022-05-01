@@ -14,11 +14,11 @@ class StatisticsMechanic(Mechanic):
     class StaticisticSet():
         def __init__(self):
             self.statistics = [
-                    Statistic("speed", 20),
-                    Statistic("endurance", 20),
-                    Statistic("physical attractiveness", 20),
-                    Statistic("physical fitness", 20),
-                    Statistic("software engineering skill", 40 )
+                    StatisticsMechanic.Statistic("speed", 20),
+                    StatisticsMechanic.Statistic("endurance", 20),
+                    StatisticsMechanic.Statistic("physical attractiveness", 20),
+                    StatisticsMechanic.Statistic("physical fitness", 20),
+                    StatisticsMechanic.Statistic("software engineering skill", 40 )
                     ]
 
     def __init__(self):
@@ -48,15 +48,19 @@ class AttractionMechanic(Mechanic):
     def __init__(self, holons):
         self.holons = holons
         self.attraction = 0.5
-    def increaseAttraction(x):
+        
+    def increaseAttraction(self, x):
         self.attraction += x
-    def decreaseAttraction(x):
+        
+    def decreaseAttraction(self, x):
         self.attraction -= x
 
     def solid(self):
         self.attraction = 0.8
+        
     def liquid(self):
         self.attraction = 0.4
+        
     def gas(self):
         self.attraction = 0.1
 
