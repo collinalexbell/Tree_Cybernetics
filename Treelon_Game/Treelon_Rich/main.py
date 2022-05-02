@@ -22,16 +22,28 @@ class U:
     def __init__(self):
         self.things = []
         self.places = []
+        self.cur_place = None
     def add(self, things):
         self.things.extend(things)
     def add_place(self, place):
         self.things.append(place)
         self.places.append(place)
+        self.cur_place = place
     def print_places(self):
         console.rule("[bold purple]<Places>")
         for place in self.places:
             place.print()
         console.rule("[bold purple]</Places>")
+    def stroke(self):
+        console.print("You are at: ")
+        if(self.cur_place != None):
+            console.print(self.cur_place.print())
+        U_.print_places()
+        choice = int(console.input("Choose a place to visit:"))
+        if(choice >= 0 and choice < len(self.places)):
+            self.cur_place = self.places[choice]
+        return choice
+
 
 U_ = U()
 
@@ -46,6 +58,8 @@ U_.add_place(Place("roxy hotel", 2))
 U_.add_place(Place("56 leonard", 1))
 U_.add_place(Place("gold st hotel", 0))
 
-U_.print_places()
+choice = 999
+while(choice != -1):
+    choice = U_.stroke()
 
 console.print("[bold magenta]Holons:[/bold magenta]", U_.things)
