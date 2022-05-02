@@ -11,10 +11,12 @@ class I:
         self.name = name
 
 class Place(I):
-    def __init__(self, name):
+    def __init__(self, name, north_value):
         super().__init__(name)
+        self.north_value = north_value
     def print(self):
         console.print("place ", self.name)
+        console.print("   at north value: ", self.north_value)
 
 class U:
     def __init__(self):
@@ -37,12 +39,12 @@ collin = I("collin")
 zeus = I("zeus")
 onix = I("onlix")
 U_.add([collin, zeus, onix])
-U_.add_place(Place("46 st hotel"))
-U_.add_place(Place("31 st hotel"))
-U_.add_place(Place("gold st hotel"))
-U_.add_place(Place("roxy hotel"))
-U_.add_place(Place("56 leonard"))
-U_.add_place(Place("central park tower"))
+U_.add_place(Place("central park tower", 5))
+U_.add_place(Place("46 st hotel", 4))
+U_.add_place(Place("31 st hotel", 3))
+U_.add_place(Place("roxy hotel", 2))
+U_.add_place(Place("56 leonard", 1))
+U_.add_place(Place("gold st hotel", 0))
 
 U_.print_places()
 
