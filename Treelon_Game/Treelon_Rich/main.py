@@ -11,12 +11,13 @@ class I:
         self.name = name
 
 class Place(I):
-    def __init__(self, name, north_value):
+    def __init__(self, name, north_value, description = ""):
         super().__init__(name)
         self.north_value = north_value
+        self.description = description
     def print(self):
         console.print("place ", self.name)
-        console.print("   at north value: ", self.north_value)
+        console.print("   at north value: ", self.north_value, "\n    ", self.description)
 
 class U:
     def __init__(self):
@@ -51,12 +52,12 @@ collin = I("collin")
 zeus = I("zeus")
 onix = I("onlix")
 U_.add([collin, zeus, onix])
-U_.add_place(Place("central park tower", 5))
-U_.add_place(Place("46 st hotel", 4))
-U_.add_place(Place("31 st hotel", 3))
-U_.add_place(Place("roxy hotel", 2))
-U_.add_place(Place("56 leonard", 1))
-U_.add_place(Place("gold st hotel", 0))
+U_.add_place(Place("gold st hotel", 0, "a high powered man's getaway in the heart of the financial district"))
+U_.add_place(Place("56 leonard", 1, "where princesses live"))
+U_.add_place(Place("roxy hotel", 2, "hacker's paradise"))
+U_.add_place(Place("31 st hotel", 3, "shithole"))
+U_.add_place(Place("46 st hotel", 4, "jury is still out on this hotel. the neighborhood seems great."))
+U_.add_place(Place("central park tower", 5, "A gorgeously tall residential tower"))
 
 choice = 999
 while(choice != -1):
