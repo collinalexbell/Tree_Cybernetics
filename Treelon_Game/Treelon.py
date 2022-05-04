@@ -118,6 +118,12 @@ class Tile_World(Grid_World):
                     sprite = pygame.image.load("Car.png")
                 elif(letter == '$'):
                     sprite = pygame.image.load("Tree.png")
+                elif(letter == '+'):
+                    sprite = pygame.image.load("TreeBase.png")
+                elif(letter == '*'):
+                    sprite = pygame.image.load("Bollard.png")
+                elif(letter == '|'):
+                    sprite = pygame.image.load("BikeRack.png")
                 else:
                     sprite = self.font.render(letter, True, (0,0,0))
                 self.add_sprite(sprite, x, y)
