@@ -171,6 +171,19 @@ class Treelon:
         self.screen = pygame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
         self.screen.fill((254,254,254))
 
+    def first_render(self):
+        waypoint_img = pygame.image.load("./imgs/waypoint_cafe.png")
+        self.Waypoint_Cafe = waypoint_img
+        self.background = pygame.Surface((GAME_WIDTH, GAME_HEIGHT))
+        self.background.fill((115,0,0))
+        self.screen_x = 0
+        self.screen_y = 110 
+        #self.Waypoint_Cafe = pygame.transform.scale(waypoint_img, (640,420))
+        self.cur_tick = pygame.time.get_ticks()
+        self.last_tick = self.cur_tick
+        self.tick()
+
+
     def __init__(self, name, primary_aim):
         # What is the purpose of your character
         self.name = name
@@ -183,16 +196,7 @@ class Treelon:
 
         characters = self.init_characters()
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
-        waypoint_img = pygame.image.load("./imgs/waypoint_cafe.png")
-        self.Waypoint_Cafe = waypoint_img
-        self.background = pygame.Surface((GAME_WIDTH, GAME_HEIGHT))
-        self.background.fill((115,0,0))
-        self.screen_x = 0
-        self.screen_y = 110 
-        #self.Waypoint_Cafe = pygame.transform.scale(waypoint_img, (640,420))
-        self.cur_tick = pygame.time.get_ticks()
-        self.last_tick = self.cur_tick
-        self.tick()
+        self.first_render()
 
     def init_characters(self):
         self.Collin = Character("./imgs/Character.png", (250, 200), 1)
