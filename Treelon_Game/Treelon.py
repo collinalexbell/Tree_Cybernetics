@@ -112,6 +112,8 @@ class Tile_World(Grid_World):
                     sprite = pygame.image.load("Road.png")
                 elif(letter == '.'):
                     sprite = pygame.image.load("Curb.png")
+                elif(letter == '-'):
+                    sprite = pygame.image.load("Sidewalk.png")
                 else:
                     sprite = self.font.render(letter, True, (0,0,0))
                 self.add_sprite(sprite, x, y)
