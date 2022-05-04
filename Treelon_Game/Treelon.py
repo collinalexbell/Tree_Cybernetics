@@ -36,7 +36,7 @@ class Pos:
         self.x = x
         self.y = y
 
-class Party: 
+class Party:
     def __init__(self, x, y):
         self.setPosition(x, y)
     def setX(self, x):
@@ -56,19 +56,18 @@ class World:
     # The world dictates the rendering of itself. 
     # It can render using any library it wants to by inheriting from World and overloading the render methods.
     # Subclasses of world implement a generic render method that various world images can be loaded into.
-    
+
     def __init__(self, name):
         self.name = name
-        
+
     def render(self):
         # the method that renders this world in Treelon, using whatever library this function needs to use.
         pass
-    
+
     def load(self, world_image):
         # loads a world image into the World object 
         # return invariant: the World is ready to plug into Treelon and render at this point
         pass
-    
 
 class Treelon:
     #         is an adventure game about becoming a world famous billionaire cyberneticist
@@ -183,6 +182,6 @@ def kuberlog():
         os.system('./wallpaper')
 
     return treelon
-            
-    
+
+
 kuberlog().report()
