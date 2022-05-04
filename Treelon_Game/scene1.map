@@ -1,0 +1,26 @@
+----------------
+      $$
+      $$
+      ++
+
+             ___--
+|          __ &&&&
+|^*    ----   &&&&
+    ---
+...................
+<<<<<<<<<<<<<<<<<<<
+<<<<<<<<<<<<<<<<<<<
+
+
+
+
+
+<=road
+.=curb
+-=sidewalk or building
+|=bikerack
+^=player
+*=bollard
+&=1/8th of a car
++=base of tree
+$=trunk of tree (in z direction, no collision detection w/ this block)
