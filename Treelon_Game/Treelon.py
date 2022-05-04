@@ -210,9 +210,7 @@ class Treelon:
             pygame.time.delay(int(wait_time))
         self.last_tick = pygame.time.get_ticks()
 
-    def tick(self):
-        self.handle_fps()
-        events = pygame.event.get()
+    def handle_keypress(self, events):
         for event in events:
           if event.type == pygame.KEYUP:
             self.party.setPosition(0,0)
@@ -228,6 +226,11 @@ class Treelon:
               self.party.setY(-d_move)
             if event.key == pygame.K_s:
               self.party.setY(d_move)
+
+    def tick(self):
+        self.handle_fps()
+        events = pygame.event.get()
+        self.handle_keypress(events)
         pos = self.party.getPos()
         self.Zeus.move(pos.x, pos.y)
         self.Collin.move(pos.x, pos.y)
