@@ -199,12 +199,15 @@ class Treelon:
         self.Zeus = Character("Zeus.png", (237, 215), 1)
         return [self.Collin, self.Zeus]
 
-    def tick(self):
+    def handle_fps(self):
         self.cur_tick = pygame.time.get_ticks()
         wait_time = 1/60 * 1000 - (self.cur_tick - self.last_tick)
         if(wait_time > 0):
             pygame.time.delay(int(wait_time))
         self.last_tick = pygame.time.get_ticks()
+
+    def tick(self):
+        self.handle_fps()
         events = pygame.event.get()
         for event in events:
           if event.type == pygame.KEYUP:
