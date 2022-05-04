@@ -85,12 +85,13 @@ class Grid_World(World):
         pass
 
 class Sprite:
-    def __init__(self, sprite_surf, x, y):
+    def __init__(self, screen, sprite_surf, x, y):
         self.sprite_surf = sprite_surf
         self.x = x
         self.y = y
+        self.screen = screen
     def render(self):
-        pass
+        self.screen.blit(self.sprite_surf, (self.x*30+10,self.y*40 - 20))
 
 class Tile_World(Grid_World):
 
@@ -98,23 +99,27 @@ class Tile_World(Grid_World):
         super().__init__(name, screen, n)
         self.activate_grid()
         self.sprite_grid = []
+        self.font = pygame.font.Font(None, 24)
 
     def load_data_file(self, fname):
         ## TODO: implement, this is really bad pseudo code
-
-        sprites_to_load = []
-        x = 0
-        y = 0
-
-        for sprite in sprites_to_load:
-            self.add_sprite(sprite, x, y)
+        f = open(fname, "r")
+        lines = f.readlines()
+        for y in range(len(lines)):
+            for x in range(len(lines[y])):
+                letter = lines[y][x]
+                if(letter == '<'):
+                    sprite = pygame.image.load("Road.png")
+                else:
+                    sprite = self.font.render(letter, True, (0,0,0))
+                self.add_sprite(sprite, x, y)
 
     def render_sprites(self):
         for sprite in self.sprite_grid:
             sprite.render()
 
     def add_sprite(self, sprite_surf, x, y):
-        sprite = Sprite(sprite_surf, x, y)
+        sprite = Sprite(self.screen, sprite_surf, x, y)
         self.sprite_grid.append(sprite)
 
     def deactivate_grid(self):
@@ -146,6 +151,7 @@ class Treelon:
 
         self.init_graphics()
         self.world = Tile_World("Treelon", self.screen, 14)
+        self.world.load_data_file("scene1.map")
 
         characters = self.init_characters()
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
