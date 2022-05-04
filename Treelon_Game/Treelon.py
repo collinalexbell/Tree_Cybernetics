@@ -69,6 +69,20 @@ class World:
         # return invariant: the World is ready to plug into Treelon and render at this point
         pass
 
+class Grid_World(World):
+    def __init__(self, name, screen):
+        self.screen = screen
+        super().__init__(name)
+
+    def render(self):
+        n = 40
+        for i in range(n):
+            pygame.draw.line(self.screen, (0,0,0), (0, GAME_HEIGHT/n*i), (GAME_WIDTH,GAME_HEIGHT/n*i))
+            pygame.draw.line(self.screen, (0,0,0), (GAME_WIDTH/n*i, 0), (GAME_WIDTH/n*i, GAME_HEIGHT))
+
+    def load(self, world_image):
+        pass
+
 class Treelon:
     #         is an adventure game about becoming a world famous billionaire cyberneticist
     #         the aim of Treelon is to augment reality and bring tech genius dreams to life 
@@ -86,6 +100,7 @@ class Treelon:
         self.primary_aim = primary_aim
 
         self.init_graphics()
+        self.world = Grid_World("Treelon", self.screen)
 
         characters = self.init_characters()
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
@@ -140,6 +155,8 @@ class Treelon:
         self.screen.blit(self.Zeus.sprite, self.Zeus.get_pos())
         for mechanic in self.mechanics:
             mechanic.draw()
+
+        self.world.render()
 
         pygame.display.flip()
 
