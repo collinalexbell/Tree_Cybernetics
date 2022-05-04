@@ -101,12 +101,14 @@ class Treelon:
         self.primary_aim = primary_aim
 
         self.init_graphics()
-        self.world = Grid_World("Treelon", self.screen, 30)
+        self.world = Grid_World("Treelon", self.screen, 14)
 
         characters = self.init_characters()
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
         waypoint_img = pygame.image.load("waypoint_cafe.png")
         self.Waypoint_Cafe = waypoint_img
+        self.background = pygame.Surface((GAME_WIDTH, GAME_HEIGHT))
+        self.background.fill((115,0,0))
         self.screen_x = 0
         self.screen_y = 110 
         #self.Waypoint_Cafe = pygame.transform.scale(waypoint_img, (640,420))
@@ -151,7 +153,7 @@ class Treelon:
         if self.reblit_background:
           self.rebut_background = False
           self.screen.fill((254,254,254))
-          self.screen.blit(self.Waypoint_Cafe, (-1*self.screen_x, -1*self.screen_y))
+          self.screen.blit(self.background, (-1*self.screen_x, -1*self.screen_y))
         self.screen.blit(self.Collin.sprite, self.Collin.get_pos())
         self.screen.blit(self.Zeus.sprite, self.Zeus.get_pos())
         for mechanic in self.mechanics:
