@@ -110,6 +110,8 @@ class Tile_World(Grid_World):
                 letter = lines[y][x]
                 if(letter == '<'):
                     sprite = pygame.image.load("Road.png")
+                elif(letter == '>'):
+                    sprite = pygame.image.load("RoadRight.png")
                 elif(letter == '.'):
                     sprite = pygame.image.load("Curb.png")
                 elif(letter == '-'):
