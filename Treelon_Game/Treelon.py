@@ -183,7 +183,7 @@ class Treelon:
         self.tick()
 
     def init_characters(self):
-        self.Collin = Character("collin.png", (250, 200), 0.05)
+        self.Collin = Character("Character.png", (250, 200), 1)
         self.Zeus = Character("Zeus.png", (240, 220), 0.3)
         return [self.Collin, self.Zeus]
 
