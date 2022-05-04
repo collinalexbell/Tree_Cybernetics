@@ -91,13 +91,13 @@ class Sprite:
         self.y = y
         self.screen = screen
     def render(self):
-        self.screen.blit(self.sprite_surf, (self.x*30+10,self.y*40 - 20))
+        self.screen.blit(self.sprite_surf, (self.x*16,self.y*16))
 
 class Tile_World(Grid_World):
 
     def __init__(self, name, screen, n):
         super().__init__(name, screen, n)
-        self.activate_grid()
+        self.deactivate_grid()
         self.sprite_grid = []
         self.font = pygame.font.Font(None, 24)
 
@@ -110,6 +110,8 @@ class Tile_World(Grid_World):
                 letter = lines[y][x]
                 if(letter == '<'):
                     sprite = pygame.image.load("Road.png")
+                elif(letter == '.'):
+                    sprite = pygame.image.load("Curb.png")
                 else:
                     sprite = self.font.render(letter, True, (0,0,0))
                 self.add_sprite(sprite, x, y)
@@ -204,12 +206,12 @@ class Treelon:
           self.rebut_background = False
           self.screen.fill((254,254,254))
           self.screen.blit(self.background, (-1*self.screen_x, -1*self.screen_y))
+        self.world.render()
         self.screen.blit(self.Collin.sprite, self.Collin.get_pos())
         self.screen.blit(self.Zeus.sprite, self.Zeus.get_pos())
         for mechanic in self.mechanics:
             mechanic.draw()
 
-        self.world.render()
 
         pygame.display.flip()
 
