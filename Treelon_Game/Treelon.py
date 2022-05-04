@@ -121,23 +121,23 @@ class Tile_World(Grid_World):
             for x in range(len(lines[y])):
                 letter = lines[y][x]
                 if(letter == '<'):
-                    sprite = pygame.image.load("Road.png")
+                    sprite = pygame.image.load("./imgs/Road.png")
                 elif(letter == '>'):
-                    sprite = pygame.image.load("RoadRight.png")
+                    sprite = pygame.image.load("./imgs/RoadRight.png")
                 elif(letter == '.'):
-                    sprite = pygame.image.load("Curb.png")
+                    sprite = pygame.image.load("./imgs/Curb.png")
                 elif(letter == '-'):
-                    sprite = pygame.image.load("Sidewalk.png")
+                    sprite = pygame.image.load("./imgs/Sidewalk.png")
                 elif(letter == '&'):
-                    sprite = pygame.image.load("Car.png")
+                    sprite = pygame.image.load("./imgs/Car.png")
                 elif(letter == '$'):
-                    sprite = pygame.image.load("Tree.png")
+                    sprite = pygame.image.load("./imgs/Tree.png")
                 elif(letter == '+'):
-                    sprite = pygame.image.load("TreeBase.png")
+                    sprite = pygame.image.load("./imgs/TreeBase.png")
                 elif(letter == '*'):
-                    sprite = pygame.image.load("Bollard.png")
+                    sprite = pygame.image.load("./imgs/Bollard.png")
                 elif(letter == '|'):
-                    sprite = pygame.image.load("BikeRack.png")
+                    sprite = pygame.image.load("./imgs/BikeRack.png")
                 else:
                     sprite = self.font.render(letter, True, (0,0,0))
                 self.add_sprite(sprite, x, y)
@@ -183,7 +183,7 @@ class Treelon:
 
         characters = self.init_characters()
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
-        waypoint_img = pygame.image.load("waypoint_cafe.png")
+        waypoint_img = pygame.image.load("./imgs/waypoint_cafe.png")
         self.Waypoint_Cafe = waypoint_img
         self.background = pygame.Surface((GAME_WIDTH, GAME_HEIGHT))
         self.background.fill((115,0,0))
@@ -195,8 +195,8 @@ class Treelon:
         self.tick()
 
     def init_characters(self):
-        self.Collin = Character("Character.png", (250, 200), 1)
-        self.Zeus = Character("Zeus.png", (237, 215), 1)
+        self.Collin = Character("./imgs/Character.png", (250, 200), 1)
+        self.Zeus = Character("./imgs/Zeus.png", (237, 215), 1)
         return [self.Collin, self.Zeus]
 
     def handle_fps(self):
