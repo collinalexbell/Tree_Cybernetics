@@ -70,12 +70,13 @@ class World:
         pass
 
 class Grid_World(World):
-    def __init__(self, name, screen):
+    def __init__(self, name, screen, n):
         self.screen = screen
         super().__init__(name)
+        self.n = n
 
     def render(self):
-        n = 40
+        n = self.n
         for i in range(n):
             pygame.draw.line(self.screen, (0,0,0), (0, GAME_HEIGHT/n*i), (GAME_WIDTH,GAME_HEIGHT/n*i))
             pygame.draw.line(self.screen, (0,0,0), (GAME_WIDTH/n*i, 0), (GAME_WIDTH/n*i, GAME_HEIGHT))
@@ -100,7 +101,7 @@ class Treelon:
         self.primary_aim = primary_aim
 
         self.init_graphics()
-        self.world = Grid_World("Treelon", self.screen)
+        self.world = Grid_World("Treelon", self.screen, 30)
 
         characters = self.init_characters()
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
