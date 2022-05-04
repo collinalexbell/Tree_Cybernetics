@@ -86,12 +86,24 @@ class Grid_World(World):
 
 class Sprite:
     def __init__(self, screen, sprite_surf, x, y):
+        self.multi_surf = []
+        self.multi_loc = []
+        if(isinstance(sprite_surf, list)):
+            for surf_and_loc in sprite_surf:
+                surf = surf_and_loc[0]
+                loc = surf_and_loc[1]
+                self.multi_surf.append(surf)
+                self.multi_loc.append(loc)
         self.sprite_surf = sprite_surf
         self.x = x
         self.y = y
         self.screen = screen
     def render(self):
-        self.screen.blit(self.sprite_surf, (self.x*16,self.y*16))
+        if(len(self.multi_surf) > 0):
+            # TODO: render the multi_surf
+            pass
+        else:
+            self.screen.blit(self.sprite_surf, (self.x*16,self.y*16))
 
 class Tile_World(Grid_World):
 
