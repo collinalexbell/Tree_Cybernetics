@@ -84,6 +84,26 @@ class Grid_World(World):
     def load(self, world_image):
         pass
 
+class Tile_World(Grid_World):
+
+    def __init__(self, name, screen, n):
+        super().__init__(name, screen, n)
+        self.activate_grid()
+
+    def render_sprites(self):
+        print("rendering the sprites")
+
+    def deactivate_grid(self):
+        self.render_grid = False
+
+    def activate_grid(self):
+        self.render_grid = True
+
+    def render(self):
+        if(self.render_grid):
+            super().render()
+        self.render_sprites()
+
 class Treelon:
     #         is an adventure game about becoming a world famous billionaire cyberneticist
     #         the aim of Treelon is to augment reality and bring tech genius dreams to life 
@@ -101,7 +121,7 @@ class Treelon:
         self.primary_aim = primary_aim
 
         self.init_graphics()
-        self.world = Grid_World("Treelon", self.screen, 14)
+        self.world = Tile_World("Treelon", self.screen, 14)
 
         characters = self.init_characters()
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
