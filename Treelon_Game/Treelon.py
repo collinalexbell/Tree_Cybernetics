@@ -178,6 +178,8 @@ class Treelon:
         self.screen_x = 0
         self.screen_y = 110 
         #self.Waypoint_Cafe = pygame.transform.scale(waypoint_img, (640,420))
+        self.cur_tick = pygame.time.get_ticks()
+        self.last_tick = self.cur_tick
         self.tick()
 
     def init_characters(self):
@@ -186,6 +188,11 @@ class Treelon:
         return [self.Collin, self.Zeus]
 
     def tick(self):
+        self.cur_tick = pygame.time.get_ticks()
+        wait_time = 1/60 * 1000 - (self.cur_tick - self.last_tick)
+        if(wait_time > 0):
+            pygame.time.delay(int(wait_time))
+        self.last_tick = pygame.time.get_ticks()
         events = pygame.event.get()
         for event in events:
           if event.type == pygame.KEYUP:
