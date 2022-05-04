@@ -84,14 +84,38 @@ class Grid_World(World):
     def load(self, world_image):
         pass
 
+class Sprite:
+    def __init__(self, sprite_surf, x, y):
+        self.sprite_surf = sprite_surf
+        self.x = x
+        self.y = y
+    def render(self):
+        pass
+
 class Tile_World(Grid_World):
 
     def __init__(self, name, screen, n):
         super().__init__(name, screen, n)
         self.activate_grid()
+        self.sprite_grid = []
+
+    def load_data_file(self, fname):
+        ## TODO: implement, this is really bad pseudo code
+
+        sprites_to_load = []
+        x = 0
+        y = 0
+
+        for sprite in sprites_to_load:
+            self.add_sprite(sprite, x, y)
 
     def render_sprites(self):
-        print("rendering the sprites")
+        for sprite in self.sprite_grid:
+            sprite.render()
+
+    def add_sprite(self, sprite_surf, x, y):
+        sprite = Sprite(sprite_surf, x, y)
+        self.sprite_grid.append(sprite)
 
     def deactivate_grid(self):
         self.render_grid = False
