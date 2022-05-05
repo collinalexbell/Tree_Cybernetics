@@ -15,6 +15,11 @@ GAME_HEIGHT = 480
 GAME_WIDTH = 640
 
 class Character:
+    # A character implements a pygame specific character class
+    # The character class has an internal tick() call back that can be called in the game loop
+    # The class also has a position and the ability to move that position.
+    # In general, this class is abstract and handles business logic but does contain some pygame specific resources,
+    #   such as the pygame image that should be rendered
     def __init__(self, sprite_file_name, starting_pos = (20,20), scale=1):
         oversized_image = pygame.image.load(sprite_file_name)
         self.sprite = pygame.transform.scale(oversized_image, (int(oversized_image.get_size()[0] * scale), int(oversized_image.get_size()[1] * scale)))
@@ -22,7 +27,8 @@ class Character:
         self.pos = starting_pos
 
     def tick(self):
-      pass
+        # This is where the character's internal logic can be ran during each tick of the game
+        pass
 
     def get_pos(self):
         return self.pos
@@ -37,8 +43,14 @@ class Pos:
         self.y = y
 
 class Party:
+    # A party is just a container for a position, right now.
+    # If this were to remain as the state of things, this class would
+    # need a rename, because a party is much more than a position
     def __init__(self, x, y):
         self.setPosition(x, y)
+        self.members = []
+    def add_member(self, member):
+        self.members.append(member)
     def setX(self, x):
         self.x = x
     def setY(self, y):
@@ -195,6 +207,8 @@ class Treelon:
         self.world.load_data_file("scene1.map")
 
         characters = self.init_characters()
+        for character in characters:
+            self.party.add_member(character)
         self.mechanics = Mechanics.allMechanics(self.screen, characters)
         self.first_render()
 
@@ -250,8 +264,8 @@ class Treelon:
           self.screen.fill((254,254,254))
           self.screen.blit(self.background, (-1*self.screen_x, -1*self.screen_y))
         self.world.render()
-        self.screen.blit(self.Collin.sprite, self.Collin.get_pos())
-        self.screen.blit(self.Zeus.sprite, self.Zeus.get_pos())
+        for character in self.party.members:
+            self.screen.blit(character.sprite, character.get_pos())
         for mechanic in self.mechanics:
             mechanic.draw()
 
