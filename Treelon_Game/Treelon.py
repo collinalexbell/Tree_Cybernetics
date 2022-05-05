@@ -128,6 +128,11 @@ class Sprite:
 
 class Tile_World(Grid_World):
 
+    class Tile:
+        def __init__(self, letter, file_name):
+            self.sprite = pygame.image.load(file_name)
+            self.letter = letter
+
     def __init__(self, name, screen, n):
         super().__init__(name, screen, n)
         self.deactivate_grid()
@@ -138,30 +143,25 @@ class Tile_World(Grid_World):
         ## TODO: implement, this is really bad pseudo code
         f = open(fname, "r")
         lines = f.readlines()
+        tiles = [
+            Tile_World.Tile('<', "./imgs/Road.png"),
+            Tile_World.Tile('>', "./imgs/RoadRight.png"),
+            Tile_World.Tile('.', "./imgs/Curb.png"),
+            Tile_World.Tile('-', "./imgs/Sidewalk.png"),
+            Tile_World.Tile('&', "./imgs/Car.png"),
+            Tile_World.Tile('$', "./imgs/Tree.png"),
+            Tile_World.Tile('+', "./imgs/TreeBase.png"),
+            Tile_World.Tile('*', "./imgs/Bollard.png"),
+            Tile_World.Tile('|', "./imgs/BikeRack.png")
+        ]
         for y in range(len(lines)):
             for x in range(len(lines[y])):
                 letter = lines[y][x]
-                if(letter == '<'):
-                    sprite = pygame.image.load("./imgs/Road.png")
-                elif(letter == '>'):
-                    sprite = pygame.image.load("./imgs/RoadRight.png")
-                elif(letter == '.'):
-                    sprite = pygame.image.load("./imgs/Curb.png")
-                elif(letter == '-'):
-                    sprite = pygame.image.load("./imgs/Sidewalk.png")
-                elif(letter == '&'):
-                    sprite = pygame.image.load("./imgs/Car.png")
-                elif(letter == '$'):
-                    sprite = pygame.image.load("./imgs/Tree.png")
-                elif(letter == '+'):
-                    sprite = pygame.image.load("./imgs/TreeBase.png")
-                elif(letter == '*'):
-                    sprite = pygame.image.load("./imgs/Bollard.png")
-                elif(letter == '|'):
-                    sprite = pygame.image.load("./imgs/BikeRack.png")
+                sprites = [tile for tile in tiles if tile.letter == letter]
+                if(len(sprites) > 0):
+                    self.add_sprite(sprites[0].sprite, x, y)
                 else:
-                    sprite = self.font.render(letter, True, (0,0,0))
-                self.add_sprite(sprite, x, y)
+                    self.add_sprite(self.font.render(letter, True, (0,0,0)), x, y)
 
     def render_sprites(self):
         for sprite in self.sprite_grid:
