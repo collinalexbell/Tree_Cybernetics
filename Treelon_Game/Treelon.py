@@ -97,6 +97,11 @@ class Grid_World(World):
         pass
 
 class Sprite:
+    # This is probably going to become a wrapper for the Pygame sprite. Right now I'm just using Pygame's image load directly
+    # The sprite isn't even being used for the character, just for the background and item tiles
+    #
+    # The sprite uses tile grid coordinates, not pygame coordinates.
+    # (16,16) is start of tile[1], (32, 32) is start of tile[2], etc
     def __init__(self, screen, sprite_surf, x, y):
         self.multi_surf = []
         self.multi_loc = []
