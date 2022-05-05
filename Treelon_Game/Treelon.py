@@ -38,6 +38,10 @@ class Character:
       self.pos = (self.pos[0]+x, self.pos[1]+y)
 
 class Pos:
+    # A 2d point data structure
+    # 
+    # I want to use the same facility to
+    # create data structures as I use for objects
     def __init__(self, x, y):
         self.x = x
         self.y = y
