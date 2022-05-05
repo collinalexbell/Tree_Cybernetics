@@ -287,8 +287,6 @@ def kuberlog():
         World("Yacht"),
         World("EarthShip (rockies)"),
     ]
-    while(True):
-        treelon.tick()
 
     print("""
                        __
@@ -309,6 +307,9 @@ def kuberlog():
     if(selection == "1"):
         import os
         os.system('./wallpaper')
+
+    while(True):
+        treelon.tick()
 
     return treelon
 
