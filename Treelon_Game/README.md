@@ -1,7 +1,7 @@
 # Tree of Life
 
- simulation adventure / RPG game. Become a billionaire cyberneticist! The dream of being a genius billionaire is achievable when simulation software is used! Profit off of cybernetics products sold through your actual corporation. This is an Augmentend Reality Simulation that dents reality.
-
+ a role playing adventure simulation game with augmented reality elements about bv becomming a tech billionaire set in NYC
+ 
 ![screencap](./imgs/screencap.jpg)
 
 ## Inspirations
