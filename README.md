@@ -2,16 +2,20 @@
 
 This is an RPG and adventure game modeled after current_year() NYC. 
 
-## Challenges
+## Challenges (far out goals, in the <10% possible range)
 
 - The 120k$ challenge: Ended Apr 17th 11:59PM EST
   * [Viewable on YouTube](https://www.youtube.com/watch?v=UQtUd76Dc_g)
   * Outcome: Failure
   * * Reasons: Didn't make any $$
 
-## Goals
+## Goals (improbable, but achievable, in the 10%<x<90% possible range)
 - Treelon the Game ready to sell by Sep 01
 - 100,000$ in the bank by Oct 01
+
+## Tasks (highly probably, things that just need to be done, in the >90% posssible range)
+- Pay my corporation's registrar (stripe)
+- Do my corporation's taxes
 
 
 ## Founders
