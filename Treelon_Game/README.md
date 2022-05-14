@@ -1,6 +1,6 @@
 # Treelon Game
 
- a role playing adventure simulation game with augmented reality elements about bv becomming a tech billionaire set in NYC
+ a role playing adventure simulation game with augmented reality elements about bv becomming a tech billionaire set in NYC.current_year()
  
 ![screencap](./imgs/screencap.jpg)
 
