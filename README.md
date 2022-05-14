@@ -44,7 +44,7 @@ The first allows one to buy the product, the other allows you to by the means of
 None launched Yet
 
 ## To Be Launched:
-- Leash: 
+- Leash (2022 or 2023): 
          - 25$ RPi, 
          - 40$ Gyro,
          - 25$ High Velocity Generator,
@@ -56,11 +56,11 @@ None launched Yet
             - Strong & Thick: <price> for City Coverage
             - Ultimate: 50$ + Long&Thin and Strong&Thick 
 
-- Tree Square: 
+- Tree Square (at least 2024): 
         - pocket tablet the size of an Samsung Galexy S10+
         - runs TreeOS
 
-- Tree Security:
+- Tree Security (maybe 2023):
     - - Mobile&deployable security systems for a highly mobile lifestyle.
 
 # Systems
