@@ -14,6 +14,8 @@ from debug import debug
 GAME_HEIGHT = 480
 GAME_WIDTH = 640
 
+TILE_SIZE = 16
+
 class Character:
     # A character implements a pygame specific character class
     # The character class has an internal tick() call back that can be called in the game loop
@@ -124,7 +126,7 @@ class Sprite:
             # TODO: render the multi_surf
             pass
         else:
-            self.screen.blit(self.sprite_surf, (self.x*16,self.y*16))
+            self.screen.blit(self.sprite_surf, (self.x*TILE_SIZE,self.y*TILE_SIZE))
 
 class Tile_World(Grid_World):
 
