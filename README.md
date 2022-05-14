@@ -4,7 +4,6 @@ The monorepo for the Tree Cyberenetics Deleware C Corporation.
 ## Challenges (far out goals, in the <10% possible range)
 
 - The 120k$ challenge: Ended Apr 17th 11:59PM EST
-  * [Viewable on YouTube](https://www.youtube.com/watch?v=UQtUd76Dc_g)
   * Outcome: Failure
   * * Reasons: Didn't make any $$
 
