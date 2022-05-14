@@ -1,6 +1,5 @@
 # Tree_Cybernetics
-
-This is an RPG and adventure game modeled after current_year() NYC. 
+The monorepo for the Tree Cyberenetics Deleware C Corporation.
 
 ## Challenges (far out goals, in the <10% possible range)
 
