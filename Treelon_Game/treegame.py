@@ -12,6 +12,7 @@ if config == "test":
  
 if config == "pygame":
   print("Treegame Pygame")
+  from pygame import *
  
 if config == "term":
   print("Treegame Term")
