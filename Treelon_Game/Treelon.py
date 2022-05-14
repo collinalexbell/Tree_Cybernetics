@@ -2,11 +2,11 @@
 
 # Treelon.py
 
-import pygame
-import pygame.image
-import pygame.font
-import pygame.display
 import treegame
+import treegame.image
+import treegame.font
+import treegame.display
+
 import Mechanics
 import BuilderMode
 import time
@@ -18,14 +18,14 @@ GAME_WIDTH = 640
 TILE_SIZE = 16
 
 class Character:
-    # A character implements a pygame specific character class
+    # A character implements a treegame specific character class
     # The character class has an internal tick() call back that can be called in the game loop
     # The class also has a position and the ability to move that position.
-    # In general, this class is abstract and handles business logic but does contain some pygame specific resources,
-    #   such as the pygame image that should be rendered
+    # In general, this class is abstract and handles business logic but does contain some treegame specific resources,
+    #   such as the treegame image that should be rendered
     def __init__(self, sprite_file_name, starting_pos = (20,20), scale=1):
-        oversized_image = pygame.image.load(sprite_file_name)
-        self.sprite = pygame.transform.scale(oversized_image, (int(oversized_image.get_size()[0] * scale), int(oversized_image.get_size()[1] * scale)))
+        oversized_image = treegame.image.load(sprite_file_name)
+        self.sprite = treegame.transform.scale(oversized_image, (int(oversized_image.get_size()[0] * scale), int(oversized_image.get_size()[1] * scale)))
 
         self.pos = starting_pos
 
@@ -97,8 +97,8 @@ class Grid_World(World):
     def render(self):
         n = self.n
         for i in range(n):
-            pygame.draw.line(self.screen, (0,0,0), (0, GAME_HEIGHT/n*i), (GAME_WIDTH,GAME_HEIGHT/n*i))
-            pygame.draw.line(self.screen, (0,0,0), (GAME_WIDTH/n*i, 0), (GAME_WIDTH/n*i, GAME_HEIGHT))
+            treegame.draw.line(self.screen, (0,0,0), (0, GAME_HEIGHT/n*i), (GAME_WIDTH,GAME_HEIGHT/n*i))
+            treegame.draw.line(self.screen, (0,0,0), (GAME_WIDTH/n*i, 0), (GAME_WIDTH/n*i, GAME_HEIGHT))
 
     def load(self, world_image):
         pass
@@ -107,7 +107,7 @@ class Sprite:
     # This is probably going to become a wrapper for the Pygame sprite. Right now I'm just using Pygame's image load directly
     # The sprite isn't even being used for the character, just for the background and item tiles
     #
-    # The sprite uses tile grid coordinates, not pygame coordinates.
+    # The sprite uses tile grid coordinates, not treegame coordinates.
     # (16,16) is start of tile[1], (32, 32) is start of tile[2], etc
     def __init__(self, screen, sprite_surf, x, y):
         self.multi_surf = []
@@ -133,14 +133,14 @@ class Tile_World(Grid_World):
 
     class Tile:
         def __init__(self, letter, file_name):
-            self.sprite = pygame.image.load(file_name)
+            self.sprite = treegame.image.load(file_name)
             self.letter = letter
 
     def __init__(self, name, screen, n):
         super().__init__(name, screen, n)
         self.deactivate_grid()
         self.sprite_grid = []
-        self.font = pygame.font.Font(None, 24)
+        self.font = treegame.font.Font(None, 24)
 
     def load_data_file(self, fname):
         ## TODO: implement, this is really bad pseudo code
@@ -190,20 +190,20 @@ class Treelon:
     #         the aim of Treelon is to augment reality and bring tech genius dreams to life 
     def init_graphics(self):
         self.reblit_background = True
-        pygame.init()
-        pygame.display.set_caption("Treelon")
-        self.screen = pygame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
+        treegame.init()
+        treegame.display.set_caption("Treelon")
+        self.screen = treegame.display.set_mode([GAME_WIDTH, GAME_HEIGHT])
         self.screen.fill((254,254,254))
 
     def first_render(self):
-        waypoint_img = pygame.image.load("./imgs/waypoint_cafe.png")
+        waypoint_img = treegame.image.load("./imgs/waypoint_cafe.png")
         self.Waypoint_Cafe = waypoint_img
-        self.background = pygame.Surface((GAME_WIDTH, GAME_HEIGHT))
+        self.background = treegame.Surface((GAME_WIDTH, GAME_HEIGHT))
         self.background.fill((115,0,0))
         self.screen_x = 0
         self.screen_y = 110 
-        #self.Waypoint_Cafe = pygame.transform.scale(waypoint_img, (640,420))
-        self.cur_tick = pygame.time.get_ticks()
+        #self.Waypoint_Cafe = treegame.transform.scale(waypoint_img, (640,420))
+        self.cur_tick = treegame.time.get_ticks()
         self.last_tick = self.cur_tick
         self.tick()
 
@@ -230,32 +230,32 @@ class Treelon:
         return [self.Collin, self.Zeus]
 
     def handle_fps(self):
-        self.cur_tick = pygame.time.get_ticks()
+        self.cur_tick = treegame.time.get_ticks()
         wait_time = 1/60 * 1000 - (self.cur_tick - self.last_tick)
         if(wait_time > 0):
-            pygame.time.delay(int(wait_time))
-        self.last_tick = pygame.time.get_ticks()
+            treegame.time.delay(int(wait_time))
+        self.last_tick = treegame.time.get_ticks()
 
     def handle_keypress(self, events):
         for event in events:
-          if event.type == pygame.KEYUP:
+          if event.type == treegame.KEYUP:
             self.party.setPosition(0,0)
-          if event.type == pygame.KEYDOWN:
+          if event.type == treegame.KEYDOWN:
             print("keydown")
             print(event.key)
             d_move=1
-            if event.key == pygame.K_d:
+            if event.key == treegame.K_d:
               self.party.setX(d_move)
-            if event.key == pygame.K_a:
+            if event.key == treegame.K_a:
               self.party.setX(-d_move)
-            if event.key == pygame.K_w:
+            if event.key == treegame.K_w:
               self.party.setY(-d_move)
-            if event.key == pygame.K_s:
+            if event.key == treegame.K_s:
               self.party.setY(d_move)
 
     def tick(self):
         self.handle_fps()
-        events = pygame.event.get()
+        events = treegame.event.get()
         self.handle_keypress(events)
         pos = self.party.getPos()
         self.Zeus.move(pos.x, pos.y)
@@ -282,11 +282,11 @@ class Treelon:
             mechanic.draw()
 
 
-        pygame.display.flip()
+        treegame.display.flip()
 
     def report(self):
         print("sdl version:")
-        print(pygame.version.SDL)
+        print(treegame.version.SDL)
         print(self.name + "'s primary aim is " + self.primary_aim)
 
 def kuberlog():
@@ -306,12 +306,8 @@ def kuberlog():
                }        /~~
               /_)^ --,r'
              |b      |b
-
-
         Treelon by Tree Inc
-
         1) install wallpaper
-
             """)
 
     selection = input("select option: ")
