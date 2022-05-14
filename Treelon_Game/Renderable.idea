@@ -1,0 +1,8 @@
+The renderable hierarchy
+
+            
+                Sprite
+               |
+Renderable ------- Voxel
+               |
+                 Mesh
