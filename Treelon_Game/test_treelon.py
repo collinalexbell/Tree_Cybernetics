@@ -17,11 +17,11 @@ def test_Sprite():
             self.position = position
     mock_screen = Mock_Screen()
     mock_sprite_surf = "mock_sprite_surf"
-    sprite = Sprite(mock_screen, mock_sprite_surf, mock_x, mock_y)
-    sprite.render
+    sprite = Treelon.Sprite(mock_screen, mock_sprite_surf, mock_x, mock_y)
+    sprite.render()
     
     assert mock_screen.sprite_surf == mock_sprite_surf
-    assert mock_screen.position == (mock_x * TILE_SIZE, mock_y * TILE_SIZE)
+    assert mock_screen.position == (mock_x * Treelon.TILE_SIZE, mock_y * Treelon.TILE_SIZE)
     
         
         
