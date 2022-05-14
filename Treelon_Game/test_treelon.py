@@ -12,7 +12,7 @@ def test_Sprite():
     class Mock_Screen:
         def __init__(self):
             pass
-        def blit(self, sprite_surf, position)
+        def blit(self, sprite_surf, position):
             self.sprite_surf = sprite_surf
             self.position = position
     mock_screen = Mock_Screen()
