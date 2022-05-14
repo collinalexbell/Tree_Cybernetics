@@ -3,6 +3,7 @@ import os
 
 config = os.environ.get('TREEGAME')
 
+print("init treegame")
 if config == None:
   print("Treegame")
 
