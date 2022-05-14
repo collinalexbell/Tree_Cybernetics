@@ -14,6 +14,11 @@ GAME_WIDTH = 640
 
 TILE_SIZE = 16
 
+def sprite_2d(sprite_file_name, scale):
+    oversized_image = treegame.image.load(sprite_file_name)
+    return treegame.transform.scale(oversized_image, (int(oversized_image.get_size()[0] * scale), int(oversized_image.get_size()[1] * scale)))
+
+
 class Character:
     # A character implements a treegame specific character class
     # The character class has an internal tick() call back that can be called in the game loop
@@ -21,9 +26,7 @@ class Character:
     # In general, this class is abstract and handles business logic but does contain some treegame specific resources,
     #   such as the treegame image that should be rendered
     def __init__(self, sprite_file_name, starting_pos = (20,20), scale=1):
-        oversized_image = treegame.image.load(sprite_file_name)
-        self.sprite = treegame.transform.scale(oversized_image, (int(oversized_image.get_size()[0] * scale), int(oversized_image.get_size()[1] * scale)))
-
+        self.sprite = sprite_2d(sprite_file_name, scale)
         self.pos = starting_pos
 
     def tick(self):
