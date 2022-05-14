@@ -3,9 +3,6 @@
 # Treelon.py
 
 import treegame
-import treegame.image
-import treegame.font
-import treegame.display
 
 import Mechanics
 import BuilderMode
