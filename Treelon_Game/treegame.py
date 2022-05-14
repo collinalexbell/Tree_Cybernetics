@@ -3,7 +3,7 @@ import os
 
 config = os.environ.get('TREEGAME')
 
-if config == "":
+if config == None:
   print("Treegame")
 
 if config == "test":
