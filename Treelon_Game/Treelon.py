@@ -322,5 +322,5 @@ def kuberlog():
 
     return treelon
 
-
-kuberlog().report()
+if __name__ == "__main__":
+    kuberlog().report()
