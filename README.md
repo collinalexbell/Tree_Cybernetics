@@ -9,6 +9,11 @@ This is an RPG and adventure game modeled after current_year() NYC.
   * Outcome: Failure
   * * Reasons: Didn't make any $$
 
+## Goals
+- Treelon the Game ready to sell by Sep 01
+- 100,000$ in the bank by Oct 01
+
+
 ## Founders
 ```json
 [
