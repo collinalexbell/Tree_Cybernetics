@@ -9,9 +9,11 @@ This is an RPG and adventure game modeled after current_year() NYC.
   * Outcome: Failure
   * * Reasons: Didn't make any $$
 
+- 100,000$ in the bank by Oct 01
+
 ## Goals (less probable, but achievable, in the 10%<x<90% possible range)
 - Treelon the Game ready to sell by Sep 01
-- 100,000$ in the bank by Oct 01
+
 
 ## Tasks (highly probably, things that just need to be done, in the >90% posssible range)
 - Pay my corporation's registrar (stripe)
