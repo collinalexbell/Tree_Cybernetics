@@ -16,7 +16,7 @@ def test_Sprite():
             self.sprite_surf = sprite_surf
             self.position = position
     mock_screen = Mock_Screen()
-    mock_sprite_surf
+    mock_sprite_surf = "mock_sprite_surf"
     sprite = Sprite(mock_screen, mock_sprite_surf, mock_x, mock_y)
     sprite.render
     
