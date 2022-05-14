@@ -6,6 +6,7 @@ import pygame
 import pygame.image
 import pygame.font
 import pygame.display
+import treegame
 import Mechanics
 import BuilderMode
 import time
