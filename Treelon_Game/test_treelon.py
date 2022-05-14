@@ -17,6 +17,8 @@ def test_Sprite():
             self.position = position
     mock_screen = Mock_Screen()
     mock_sprite_surf = "mock_sprite_surf"
+    mock_x = 13
+    mock_y = 42
     sprite = Treelon.Sprite(mock_screen, mock_sprite_surf, mock_x, mock_y)
     sprite.render()
     
