@@ -42,6 +42,8 @@ The first allows one to buy the product, the other allows you to by the means of
 None launched Yet
 
 ## To Be Launched:
+- Smol Boi:
+         - Really bad, small, robot arm
 - Leash (2022 or 2023): 
          - 25$ RPi, 
          - 40$ Gyro,
