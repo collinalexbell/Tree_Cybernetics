@@ -25,6 +25,8 @@ def test_Sprite():
     assert mock_screen.sprite_surf == mock_sprite_surf
     assert mock_screen.position == (mock_x * Treelon.TILE_SIZE, mock_y * Treelon.TILE_SIZE)
     
+def test_treegame_import():
+    import treegame
         
         
    
