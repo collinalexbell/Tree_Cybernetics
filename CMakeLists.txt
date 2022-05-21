@@ -21,6 +21,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+add_executable(Tree_Cybernetics Tree_Cybernetics.cpp)
 add_executable(meditate meditate.cpp)
 add_executable(Treelon Treelon.cpp 3d.cpp opengl/glad/glad.c)
 add_executable(Cyborg Cyborg.cpp)
