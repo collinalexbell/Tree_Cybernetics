@@ -6,6 +6,8 @@
 #include <vector>
 #include <stdlib.h>
 
+#define BUFFER_OFFSET(offset) ((void *)(offset))
+
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window);
 
@@ -171,7 +173,7 @@ void init_3d() {
   glCreateVertexArrays(1, &VAO);
   glBindVertexArray(VAO);
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
   glEnableVertexAttribArray(0);
 
   // note that this is allowed, the call to glVertexAttribPointer registered VBO
