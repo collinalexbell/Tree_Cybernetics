@@ -135,6 +135,18 @@ Window* create_window() {
   return create_glfw_window();
 }
 
+void renderWithGl(GLuint shaderProgram, GLuint VAO) {
+    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    // draw our first triangle
+    glUseProgram(shaderProgram);
+    glBindVertexArray(
+        VAO); // seeing as we only have a single VAO there's no need to bind it
+              // every time, but we'll do so to keep things a bit more organized
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+}
+
 void init_3d() {
   Window* window = create_window();
   init_gl_fn_pointers();
@@ -186,15 +198,7 @@ void init_3d() {
 
     // render
     // ------
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    // draw our first triangle
-    glUseProgram(shaderProgram);
-    glBindVertexArray(
-        VAO); // seeing as we only have a single VAO there's no need to bind it
-              // every time, but we'll do so to keep things a bit more organized
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    renderWithGl(shaderProgram, VAO);
     // glBindVertexArray(0); // no need to unbind it every time
 
     // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved
