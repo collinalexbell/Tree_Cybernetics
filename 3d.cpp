@@ -18,10 +18,10 @@ const unsigned int SCR_HEIGHT = 2000;
 
 const char *vertexShaderSource =
     "#version 450 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
+    "layout (location = 0) in vec4 aPos;\n"
     "void main()\n"
     "{\n"
-    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+    "   gl_Position = aPos;\n"
     "}\0";
 const char *fragmentShaderSource =
     "#version 450 core\n"
@@ -171,7 +171,7 @@ void init_3d() {
   glCreateVertexArrays(1, &VAO);
   glBindVertexArray(VAO);
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *)0);
   glEnableVertexAttribArray(0);
 
   // note that this is allowed, the call to glVertexAttribPointer registered VBO
