@@ -166,7 +166,7 @@ void init_3d() {
 
   unsigned int VBO, VAO;
   glCreateVertexArrays(1, &VAO);
-  glGenBuffers(1, &VBO);
+  glCreateBuffers(1, &VBO);
   // bind the Vertex Array Object first, then bind and set vertex buffer(s), and
   // then configure vertex attributes(s).
   glBindVertexArray(VAO);
