@@ -8,6 +8,8 @@
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window);
 
+typedef GLFWwindow Window;
+
 // settings
 // not currently being listened to for some reason
 const unsigned int SCR_WIDTH = 2000;
@@ -32,8 +34,8 @@ void init_and_configure_glfw() {
   // glfw: initialize and configure
   // ------------------------------
   glfwInit();
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 #ifdef __APPLE__
@@ -120,17 +122,21 @@ void delete_shaders(unsigned int vertexShader, unsigned int fragmentShader) {
   glDeleteShader(fragmentShader);
 }
 
-std::vector<float> triangle_vertices() {
-  return std::vector<float>{
+std::vector<GLfloat> triangle_vertices() {
+  return std::vector<GLfloat>{
       -0.5f, -0.5f, 0.0f, // left
       0.5f,  -0.5f, 0.0f, // right
       0.0f,  0.5f,  0.0f  // top
       };
 }
 
-void init_3d() {
+Window* create_window() {
   init_and_configure_glfw();
-  GLFWwindow* window = create_glfw_window();
+  return create_glfw_window();
+}
+
+void init_3d() {
+  Window* window = create_window();
   init_gl_fn_pointers();
   unsigned int vertexShader = build_and_compile_vertex_shader();
   unsigned int fragmentShader = build_and_compile_fragment_shader();
