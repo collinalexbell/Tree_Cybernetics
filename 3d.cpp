@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 #include <memory>
 #include <vector>
+#include <stdlib.h>
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void processInput(GLFWwindow *window);
@@ -51,6 +52,7 @@ GLFWwindow* create_glfw_window() {
   if (window == NULL) {
     std::cout << "Failed to create GLFW window" << std::endl;
     glfwTerminate();
+    exit(EXIT_FAILURE);
   }
   glfwMakeContextCurrent(window);
   glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
