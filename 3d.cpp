@@ -192,18 +192,8 @@ void init_3d() {
   // render loop
   // -----------
   while (!glfwWindowShouldClose(window)) {
-    // input
-    // -----
     processInput(window);
-
-    // render
-    // ------
     renderWithGl(shaderProgram, VAO);
-    // glBindVertexArray(0); // no need to unbind it every time
-
-    // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved
-    // etc.)
-    // -------------------------------------------------------------------------------
     glfwSwapBuffers(window);
     glfwPollEvents();
   }
