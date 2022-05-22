@@ -1,10 +1,13 @@
 #include "3d.h"
 #include <glad.h>
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <GLFW/glfw3.h>
 #include <memory>
 #include <vector>
 #include <stdlib.h>
+#include <string>
 
 #define BUFFER_OFFSET(offset) ((void *)(offset))
 
@@ -18,20 +21,17 @@ typedef GLFWwindow Window;
 const unsigned int SCR_WIDTH = 2000;
 const unsigned int SCR_HEIGHT = 2000;
 
-const char *vertexShaderSource =
-    "#version 450 core\n"
-    "layout (location = 0) in vec4 aPos;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = aPos;\n"
-    "}\0";
-const char *fragmentShaderSource =
-    "#version 450 core\n"
-    "out vec4 FragColor;\n"
-    "void main()\n"
-    "{\n"
-    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-    "}\n\0";
+std::string readShader(const char* fname) {
+  std::ifstream f(fname); 
+  std::stringstream buffer;
+  buffer << f.rdbuf();
+  return buffer.str();
+}
+
+
+std::string vertexShaderSource;
+std::string fragmentShaderSource;
+
 
 void init_and_configure_glfw() {
   // glfw: initialize and configure
@@ -70,7 +70,8 @@ void init_gl_fn_pointers() {
 unsigned int build_and_compile_vertex_shader() {
 
   unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-  glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+  const char *src_c_str = vertexShaderSource.c_str();
+  glShaderSource(vertexShader, 1, &src_c_str, NULL);
   glCompileShader(vertexShader);
   // check for shader compile errors
   int success;
@@ -90,7 +91,8 @@ unsigned int build_and_compile_fragment_shader() {
   char infoLog[512];
   // fragment shader
   unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-  glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+  const char *src_c_str = fragmentShaderSource.c_str();
+  glShaderSource(fragmentShader, 1, &src_c_str, NULL);
   glCompileShader(fragmentShader);
   // check for shader compile errors
   glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
@@ -154,6 +156,9 @@ void renderWithGl(GLuint shaderProgram, GLuint VAO) {
 void init_3d() {
   Window* window = create_window();
   init_gl_fn_pointers();
+
+  vertexShaderSource = readShader("passThroughVertex.s");
+  fragmentShaderSource = readShader("simpleColorFrag.s");
   unsigned int vertexShader = build_and_compile_vertex_shader();
   unsigned int fragmentShader = build_and_compile_fragment_shader();
   unsigned int shaderProgram = build_shader_program(vertexShader, fragmentShader);
